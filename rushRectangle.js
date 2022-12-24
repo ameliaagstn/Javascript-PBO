@@ -95,3 +95,33 @@ let _line = {
   }
 }
 
+//garis tengah jalan 2
+let _line1 = {
+  x: 300,
+  y: 300,
+  x2: 300,
+  y2: 350,
+  sp: 5,
+  draw: function (){
+      strokeWeight (4);
+      stroke ("BLACK");
+      line (this.x, this.y, this.x2, this.y2);
+  },
+  //garis jalan
+  move: function (){
+    this.y += this.sp;
+    this.y2 += this.sp;
+    if(this.y > height){
+      this.y = -50;
+      this.y2 = 100;
+    }
+  }
+}
+
+//untuk menjalankan garis
+function moveLines(){
+  _line.draw();
+  _line.move();
+  _line1.draw();
+  _line1.move();
+}
