@@ -254,3 +254,16 @@ function collideCar (x, y, width, height, x2, y2, width2, height2) {
       return true;
     }
 }
+
+//game over
+function stop (){
+  background("BLACK")
+    fill ("WHITE");
+    noStroke ();
+    textSize (38);
+    text ("GAME OVER!!!", 300, 300);
+    textSize (24);
+    noStroke ();
+    text (`${"score kamu : "}${score}`, 300, 350);
+    noLoop ();
+}
