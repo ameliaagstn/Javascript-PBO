@@ -125,3 +125,35 @@ function moveLines(){
   _line1.draw();
   _line1.move();
 }
+
+
+//pemain
+let pemain = {
+  x: 400,
+  sp: 10,
+  y: 500,
+  width: 40,
+  height: 55,
+  draw: function (){
+    noStroke ();
+    fill ("BLUE");
+    rect (this.x, this.y, this.width, this.height);
+    fill ("#e5b9d6");
+    rect (this.x+5, this.y+10, this.width-10, this.height-20);
+    textSize (10);
+    fill(0);
+    text ('YOU', this.x, this.y+23, this.width, this.height);
+  },
+  
+  //untuk menggerakkan pemain
+  move: function move(){
+      //panah kanan ke kanan (di dalam jalan)
+    if ((keyIsPressed) && (keyCode === RIGHT_ARROW) && (this.x + this.width !== width -150)){
+      this.x += this.sp;
+    }
+    //panah kiri gerak ke kiri (di dalam jalan)
+    if ((keyIsPressed) && (keyCode === LEFT_ARROW) && (this.x !== 150)){
+      this.x -= this.sp;
+    }
+  }
+}
