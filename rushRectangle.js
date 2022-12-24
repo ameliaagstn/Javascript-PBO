@@ -158,48 +158,48 @@ let pemain = {
   }
 }
 
+//musuh1
+let musuh1 = {
+  x: 170,
+  sp: 8,
+  y: -50,
+  width: 40,
+  height: 55, 
+  col: [19, 4, 255],
+  draw: function (){
+    fill (this.col[0], this.col[1], this.col[2]);
+    rect (this.x, this.y, this.width, this.height);
+  }, 
+  move: function (){
+      this.y += this.sp;
+    //jika musuh1 sampai tepi bawah maka ngulang dari atas
+  if (this.y > height){
+    this.y = 0;
+    }
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//musuh2
+let musuh2 = {
+  x: 330,
+  sp: 8,
+  y: -250,
+  width: 40,
+  height : 55,
+  col: [255, 79, 80],
+  draw: function (){
+    fill (this.col[0], this.col[1], this.col[2]);
+    rect (this.x, this.y, this.width, this.height);
+  },
+  move: function(){
+    //menggerakkan musuh2
+      this.y += this.sp;
+    //jika musuh2 sampai tepi bawah maka ngulang dari atas
+  if(this.y > height){
+    this.y = 0;
+    }
+  }
+}
 
 //menggerakkan musuh
 function moveRect (){
