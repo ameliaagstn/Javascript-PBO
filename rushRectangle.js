@@ -29,3 +29,45 @@ function setup () {
   createCanvas (600, 600);
   background ("#f8ede3");
 }
+
+function draw () {
+  // kalo pencet enter maka mode === 1
+  if (keyCode === ENTER ){
+        mode = 1;
+    }
+  if (mode === 0){
+    fill ("#85586f");
+    textAlign (CENTER);
+    textSize (38);
+    text ("Tekan ENTER untuk", 300, 275);
+    text ("memulai permainan", 300, 325);
+
+  }
+  if (mode === 1){
+    background ("WHITE"); //untuk warna jalan
+    bordL.draw ();
+    bordR.draw ();
+    moveLines ();
+    pemain.draw ();
+    moveCars ();
+
+    //tampilan atas
+    fill(10);
+    rect(0, 0, 600, 40);
+    noStroke();
+    
+    //Menampilkan score 
+    fill("RED");
+    textSize(15);
+    text(`SCORE : ${score}`, 45, 25);
+    
+    //Menampilkan nama 
+    fill("YELLOW");
+    textSize(10);
+    text('Made by :', 570, 15);
+    fill("CYAN");
+    textSize(12);
+    text('Kartika & Amelia', 545, 28)
+  }
+  
+}
